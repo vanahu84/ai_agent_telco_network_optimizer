@@ -1,0 +1,28 @@
+2025-06-16 13:38:30,875 - INFO - [server.py:201] - Creating MCP Server instance for SQLite DB...
+2025-06-16 13:38:30,903 - DEBUG - [server.py:146] - Initializing server 'sqlite-db-mcp-server'
+2025-06-16 13:38:31,065 - DEBUG - [server.py:372] - Registering handler for ListToolsRequest
+2025-06-16 13:38:31,271 - DEBUG - [server.py:390] - Registering handler for CallToolRequest
+2025-06-16 13:38:31,486 - INFO - [server.py:302] - Launching SQLite DB MCP Server via stdio...
+2025-06-16 13:38:31,622 - DEBUG - [proactor_events.py:631] - Using proactor: IocpProactor
+2025-06-16 13:38:31,842 - INFO - [server.py:281] - MCP Stdio Server: Starting handshake with client...
+2025-06-16 13:38:32,504 - DEBUG - [server.py:486] - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2025-06-16 13:38:32,568 - DEBUG - [server.py:486] - Received message: <mcp.shared.session.RequestResponder object at 0x0000025DB5BFAC10>
+2025-06-16 13:38:32,569 - INFO - [server.py:523] - Processing request of type ListToolsRequest
+2025-06-16 13:38:32,578 - DEBUG - [server.py:525] - Dispatching request of type ListToolsRequest
+2025-06-16 13:38:32,692 - INFO - [server.py:219] - MCP Server: Received list_tools request.
+2025-06-16 13:38:32,769 - INFO - [server.py:228] - MCP Server: Advertising tool: list_db_tables, InputSchema: {'type': 'object', 'properties': {'dummy_param': {'type': 'string'}}}
+2025-06-16 13:38:32,868 - INFO - [server.py:228] - MCP Server: Advertising tool: get_table_schema, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}}}
+2025-06-16 13:38:32,927 - INFO - [server.py:228] - MCP Server: Advertising tool: query_db_table, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}, 'columns': {'type': 'string'}, 'condition': {'type': 'string'}}}
+2025-06-16 13:38:33,009 - INFO - [server.py:228] - MCP Server: Advertising tool: insert_data, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}, 'data': {'type': 'object'}}}
+2025-06-16 13:38:33,118 - INFO - [server.py:228] - MCP Server: Advertising tool: delete_data, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}, 'condition': {'type': 'string'}}}
+2025-06-16 13:38:33,169 - DEBUG - [server.py:566] - Response sent
+2025-06-16 13:38:48,615 - DEBUG - [server.py:486] - Received message: <mcp.shared.session.RequestResponder object at 0x0000025DB5BFAFD0>
+2025-06-16 13:38:48,835 - INFO - [server.py:523] - Processing request of type ListToolsRequest
+2025-06-16 13:38:49,129 - DEBUG - [server.py:525] - Dispatching request of type ListToolsRequest
+2025-06-16 13:38:49,296 - INFO - [server.py:219] - MCP Server: Received list_tools request.
+2025-06-16 13:38:49,556 - INFO - [server.py:228] - MCP Server: Advertising tool: list_db_tables, InputSchema: {'type': 'object', 'properties': {'dummy_param': {'type': 'string'}}}
+2025-06-16 13:38:49,696 - INFO - [server.py:228] - MCP Server: Advertising tool: get_table_schema, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}}}
+2025-06-16 13:38:49,793 - INFO - [server.py:228] - MCP Server: Advertising tool: query_db_table, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}, 'columns': {'type': 'string'}, 'condition': {'type': 'string'}}}
+2025-06-16 13:38:49,901 - INFO - [server.py:228] - MCP Server: Advertising tool: insert_data, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}, 'data': {'type': 'object'}}}
+2025-06-16 13:38:49,995 - INFO - [server.py:228] - MCP Server: Advertising tool: delete_data, InputSchema: {'type': 'object', 'properties': {'table_name': {'type': 'string'}, 'condition': {'type': 'string'}}}
+2025-06-16 13:38:50,108 - DEBUG - [server.py:566] - Response sent

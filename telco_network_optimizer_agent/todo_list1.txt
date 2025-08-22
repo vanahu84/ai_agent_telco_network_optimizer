@@ -1,0 +1,28 @@
+Get the Pending orders from orders table
+Call Sara Lee at 9887766554 at 10 PM
+Grocery shopping (milk, eggs, bread)
+Pay the electricity bill
+Schedule a doctor appointment
+Return library books
+Book a flight for the trip
+Follow up on pending orders: Check on order IDs 2, 6, 13, and 16
+Process open orders: Process order IDs 1, 3, 4, 5, 8, 10, 11, 14, and 15
+Check applied orders: Verify order IDs 7 and 9
+Send welcome email to all new customers
+Verify customer contact information for all customers
+Check order history for all customers
+Process order id 1 for customer 8, order type Package Conv, created at 2025-06-01
+Process order id 2 for customer 6, order type Package Conv, created at 2025-06-02
+Process order id 3 for customer 7, order type Package Conv, created at 2025-06-03
+Process order id 4 for customer 2, order type Sim Swap, created at 2025-06-04
+Process order id 5 for customer 7, order type Package Conv, created at 2025-06-05
+Process order id 6 for customer 4, order type Create Account, created at 2025-06-06
+Process order id 7 for customer 8, order type Package Conv, created at 2025-06-07
+Process order id 8 for customer 2, order type Create Account, created at 2025-06-08
+Process order id 9 for customer 10, order type Package Conv, created at 2025-06-09
+Process order id 10 for customer 8, order type Sim Swap, created at 2025-06-10
+Process order id 11 for customer 6, order type Package Conv, created at 2025-06-11
+Process order id 13 for customer 4, order type Package Conv, created at 2025-06-13
+Process order id 14 for customer 4, order type Package Conv, created at 2025-06-14
+Process order id 15 for customer 3, order type Sim Swap, created at 2025-06-15
+Process order id 16 for customer 1, order type Create Account, created at 2024-01-01

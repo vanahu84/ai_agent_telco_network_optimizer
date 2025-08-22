@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "TowerLoad": {
+      "command": "python",
+      "args": [
+        "telco_network_optimizer_agent/tower_load_mcp_server.py"
+      ]
+    },
+    "SpectrumAllocation": {
+      "command": "python",
+      "args": [
+        "telco_network_optimizer_agent/spectrum_allocation_server.py"
+      ]
+    },
+    "UserGeoMovement": {
+      "command": "python",
+      "args": [
+        "telco_network_optimizer_agent/user_geo_movement_server.py"
+      ]
+    },
+    "Maintenance": {
+      "command": "python",
+      "args": [
+        "telco_network_optimizer_agent/maintenance_mcp_server.py"
+      ]
+    }
+  }
+}
