@@ -52,9 +52,10 @@ for name, config in mcp_config.items():
     
 # Build the root agent with all MCP servers
 root_agent = LlmAgent(
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     name="tel_ops_ai_agent",
     instruction=MERGED_MCP_PROMPT,
     tools=toolsets  # Multiple MCP servers
 )
+
 
