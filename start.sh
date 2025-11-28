@@ -1,24 +1,45 @@
 #!/bin/bash
-set -e # Exit immediately on error
+set -e
 
-echo "⚙️ Installing dependencies (if needed)..."
-# Optional: only use this line if venv or dependencies are not pre-installed
-# pip install -r requirements.txt
+echo "=========================================="
+echo "  Telecom Network Optimizer - Starting"
+echo "=========================================="
 
-echo "🔧 Preparing MCP server environment..."
-# Create writable log directory and file if needed
-# mkdir -p /tmp/mcp_logs
-# touch /tmp/mcp_logs/mcp_server_activity.log
-# chmod 755 /tmp/mcp_logs
-# chmod 644 /tmp/mcp_logs/mcp_server_activity.log
-# chmod 777 /app/telco_network_optimizer_agent/
+# Check API keys
+if [ -z "$OPENAI_API_KEY" ] && [ -z "$OPENROUTER_API_KEY" ]; then
+    echo "⚠️  WARNING: No API keys found!"
+    echo "Set OPENAI_API_KEY or OPENROUTER_API_KEY"
+fi
 
-# Set environment variable for MCP server log path
-# export MCP_LOG_PATH="/tmp/mcp_logs/mcp_server_activity.log"
+# Display config
+echo ""
+echo "Configuration:"
+[ -n "$OPENAI_API_KEY" ] && echo "  ✓ OpenAI API Key: Set"
+[ -n "$OPENROUTER_API_KEY" ] && echo "  ✓ OpenRouter API Key: Set"
+echo "  Port: ${PORT:-7860}"
+echo ""
 
-# Test if MCP server can run (don't fail if chmod doesn't work)
-echo "🧪 Testing MCP server configuration..."
-python /app/telco_network_optimizer_agent/tower_load_mcp_server.py --help > /dev/null 2>&1 || echo "⚠️  MCP server test failed - continuing anyway"
+# Python version
+echo "🐍 Python version:"
+python --version
 
-echo "🌐 Starting ADK MCP server..."
-adk web --host 0.0.0.0 --port "${PORT:-10001}"
+# Verify core dependencies
+echo ""
+echo "📦 Checking dependencies..."
+python -c "import fastapi; import uvicorn; import openai; import httpx; print('✓ Dependencies OK')" || {
+    echo "❌ Missing dependencies!"
+    echo "Installing..."
+    pip install -r requirements.txt
+}
+
+# Start web server
+echo ""
+echo "=========================================="
+echo "  Starting Web Server"
+echo "=========================================="
+echo "  Host: 0.0.0.0"
+echo "  Port: ${PORT:-7860}"
+echo "=========================================="
+echo ""
+
+exec python telco_network_optimizer_agent/web_server.py
