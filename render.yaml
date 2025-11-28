@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: telco-network-optimizer
+    env: docker
+    plan: free  # Change to 'starter' or higher for production
+    region: oregon  # Choose your preferred region
+    branch: main  # Your git branch
+    
+    # Docker configuration
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    
+    # Environment variables
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false  # Set this in Render dashboard for security
+      
+      - key: OPENROUTER_API_KEY
+        sync: false  # Set this in Render dashboard for security
+      
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      
+      - key: OPENROUTER_MODEL
+        value: grok-2-latest
+      
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      
+      - key: PYTHONDONTWRITEBYTECODE
+        value: "1"
+    
+    # Health check endpoint (adjust if you have a specific health endpoint)
+    healthCheckPath: /
+    
+    # Auto-deploy on git push
+    autoDeploy: true
+    
+    # Build command (optional, Docker handles this)
+    # buildCommand: echo "Building with Docker"
+    
+    # Start command (handled by Dockerfile CMD)
+    # startCommand: bash start.sh
