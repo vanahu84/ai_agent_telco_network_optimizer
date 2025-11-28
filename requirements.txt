@@ -9,3 +9,7 @@ scikit-learn
 matplotlib
 seaborn
 python-dotenv
+httpx
+asyncio
+
+
